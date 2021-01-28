@@ -1,0 +1,259 @@
+<div id="settingsContainer" style="display: none;"
+     class="container-fluid flex-1 justify-items-stretch justify-center items-center">
+
+    <div class="text-yellow-500 p-4 text-2xl">
+        <h3 class="font-bold pl-2">Réglages</h3>
+    </div>
+
+    <div class="container mx-auto ">
+        <div class="relative bg-white md:w-full p-10">
+
+            <div class="relative bg-white md:w-full p-3 rounded-lg shadow-2xl">
+                <div class="grid grid-cols-5 gap-1">
+
+                    <button class="settingsNavItem py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+                            rSc="settingsTabAccount" id="settingsNavAccount" selected>Compte
+                    </button>
+                    <button class="settingsNavItem py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+                            rSc="settingsTabMinecraft">Minecraft
+                    </button>
+                    <button class="settingsNavItem py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+                            rSc="settingsTabJava">Java
+                    </button>
+                    <button class="settingsNavItem py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+                            rSc="settingsTabAbout">A Propos
+                    </button>
+                    <button class="settingsNavItem py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+                            rSc="settingsTabUpdate" id="settingsNavUpdate">Mise à jour
+                    </button>
+                </div>
+            </div>
+
+            <div class="shadow-xl rounded-2xl bg-white dark:bg-gray-800 w-auto m-auto">
+                <div class="w-full text-center">
+                    <div class="flex flex-col items-center justify-between">
+
+
+                        <div id="settingsTabAccount" class="settingsTab">
+                            <div class="settingsTabHeader">
+                                <span class="font-bold pl-2 text-yellow-500 text-small">Vos comptes</span>
+                                <span class="text-gray-800">Gérer vos comptes Minecraft depuis ici.</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <div id="settingsCurrentAccounts"></div>
+                            </div>
+                        </div>
+                        <div id="settingsTabMinecraft" class="settingsTab" style="display: none;">
+                            <div class="settingsTabHeader">
+                                <span class="font-bold pl-2 text-yellow-500 text-small">Minecraft</span>
+                                <span class="text-gray-800">Régler les paramètre de jeu depuis le launcher.</span>
+                            </div>
+
+                            Soon :)
+
+                        </div>
+                        <div id="settingsTabMods" class="settingsTab" style="display: none;">
+                            <div class="settingsTabHeader">
+                                <span class="settingsTabHeaderText">Mod Settings</span>
+                                <span class="settingsTabHeaderDesc">Enable or disable mods.</span>
+                            </div>
+                            <div id="settingsSelServContainer">
+                                <div id="settingsSelServContent">
+
+                                </div>
+                                <div id="settingsSwitchServerContainer">
+                                    <div id="settingsSwitchServerContent">
+                                        <button id="settingsSwitchServerButton">Switch</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="settingsModsContainer">
+                                <div id="settingsReqModsContainer">
+                                    <div class="settingsModsHeader">Required Mods</div>
+                                    <div id="settingsReqModsContent">
+
+                                    </div>
+                                </div>
+                                <div id="settingsOptModsContainer">
+                                    <div class="settingsModsHeader">Optional Mods</div>
+                                    <div id="settingsOptModsContent">
+
+                                    </div>
+                                </div>
+                                <div id="settingsDropinModsContainer">
+                                    <div class="settingsModsHeader">Drop-in Mods</div>
+                                    <button id="settingsDropinFileSystemButton">+ Add Mods <span
+                                                id="settingsDropinRefreshNote">(F5 to Refresh)</span></button>
+                                    <div id="settingsDropinModsContent">
+
+                                    </div>
+                                </div>
+                                <div id="settingsShadersContainer">
+                                    <div class="settingsModsHeader">Shaderpacks</div>
+                                    <div id="settingsShaderpackDesc">Enable or disable shaders. Please note, shaders
+                                        will only run smoothly on powerful setups. You may add custom packs here.
+                                    </div>
+                                    <div id="settingsShaderpackWrapper">
+                                        <button id="settingsShaderpackButton"> +</button>
+                                        <div class="settingsSelectContainer">
+                                            <div class="settingsSelectSelected" id="settingsShadersSelected">Select
+                                                Shaderpack
+                                            </div>
+                                            <div class="settingsSelectOptions" id="settingsShadersOptions" hidden>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="settingsTabJava" class="settingsTab" style="display: none;">
+                            <div class="settingsTabHeader">
+                                <span class="font-bold pl-2 text-yellow-500 text-small">Java & RAM</span>
+                                <span class="text-gray-800">Configurer votre Java et la RAM alloué.</span>
+                            </div>
+                            <div id="settingsMemoryContainer">
+                                <div id="settingsMemoryContent">
+                                    <div id="settingsMemoryContentLeft">
+                                        <div class="settingsMemoryContentItem">
+                                            <span class="settingsMemoryHeader">Maximum RAM</span>
+                                            <div class="settingsMemoryActionContainer">
+                                                <div id="settingsMaxRAMRange" class="rangeSlider" cValue="MaxRAM"
+                                                     min="3" max="8" value="3" step="0.5">
+                                                    <div class="rangeSliderBar"></div>
+                                                    <div class="rangeSliderTrack"></div>
+                                                </div>
+                                                <span id="settingsMaxRAMLabel" class="settingsMemoryLabel">3G</span>
+                                            </div>
+                                        </div>
+                                        <div class="settingsMemoryContentItem">
+                                            <span class="settingsMemoryHeader">Minimum RAM</span>
+                                            <div class="settingsMemoryActionContainer">
+                                                <div id="settingsMinRAMRange" class="rangeSlider" cValue="MinRAM"
+                                                     min="3" max="8" value="3" step="0.5">
+                                                    <div class="rangeSliderBar"></div>
+                                                    <div class="rangeSliderTrack"></div>
+                                                </div>
+                                                <span id="settingsMinRAMLabel" class="settingsMemoryLabel">3G</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="settingsMemoryContentRight">
+                                        <div id="settingsMemoryStatus">
+                                            <div class="settingsMemoryStatusContainer">
+                                                <span class="settingsMemoryStatusTitle">Total</span>
+                                                <span id="settingsMemoryTotal"
+                                                      class="settingsMemoryStatusValue">16G</span>
+                                            </div>
+                                            <div class="settingsMemoryStatusContainer">
+                                                <span class="settingsMemoryStatusTitle">Disponible</span>
+                                                <span id="settingsMemoryAvail"
+                                                      class="settingsMemoryStatusValue">7.3G</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="settingsTabLauncher" class="settingsTab" style="display: none;">
+                            <div class="settingsTabHeader">
+                                <span class="settingsTabHeaderText">Launcher Settings</span>
+                                <span class="settingsTabHeaderDesc">Options related to the launcher itself.</span>
+                            </div>
+                            <div class="settingsFieldContainer">
+                                <div class="settingsFieldLeft">
+                                    <span class="settingsFieldTitle">Allow Pre-Release Updates.</span>
+                                    <span class="settingsFieldDesc">Pre-Releases include new features which may have not been fully tested or integrated.<br>This will always be true if you are using a pre-release version.</span>
+                                </div>
+                                <div class="settingsFieldRight">
+                                    <label class="toggleSwitch">
+                                        <input type="checkbox" cValue="AllowPrerelease">
+                                        <span class="toggleSwitchSlider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="settingsFileSelContainer">
+                                <div class="settingsFileSelContent">
+                                    <div class="settingsFieldTitle" id="settingsDataDirTitle">Data Directory</div>
+                                    <div class="settingsFileSelActions">
+                                        <div class="settingsFileSelIcon">
+                                            <svg class="settingsFileSelSVG">
+                                                <g>
+                                                    <path fill="gray"
+                                                          d="m10.044745,5c0,0.917174 -0.746246,1.667588 -1.667588,1.667588l-4.168971,0l-2.501382,0c-0.921009,0 -1.667588,0.750415 -1.667588,1.667588l0,6.670353l0,2.501382c0,0.917174 0.746604,1.667588 1.667588,1.667588l16.675882,0c0.921342,0 1.667588,-0.750415 1.667588,-1.667588l0,-2.501382l0,-8.337941c0,-0.917174 -0.746246,-1.667588 -1.667588,-1.667588l-8.337941,0z"/>
+                                                    <path fill="gray"
+                                                          d="m1.627815,1.6c-0.921009,0 -1.667588,0.746579 -1.667588,1.667588l0,4.168971l8.337941,0l0,0.833794l11.673118,0l0,-4.168971c0,-0.921009 -0.746246,-1.667588 -1.667588,-1.667588l-8.572237,0c-0.288493,-0.497692 -0.816284,-0.833794 -1.433292,-0.833794l-6.670353,0z"/>
+                                                    <path fill="lightgray"
+                                                          d="m10.025276,4c0,0.918984 -0.747719,1.670879 -1.670879,1.670879l-4.177198,0l-2.506319,0c-0.922827,0 -1.670879,0.751896 -1.670879,1.670879l0,6.683517l0,2.506319c0,0.918984 0.748078,1.670879 1.670879,1.670879l16.708794,0c0.923161,0 1.670879,-0.751896 1.670879,-1.670879l0,-2.506319l0,-8.354397c0,-0.918984 -0.747719,-1.670879 -1.670879,-1.670879l-8.354397,0z"/>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <input class="settingsFileSelVal" type="text" value="null"
+                                               cValue="DataDirectory" disabled>
+                                        <button class="settingsFileSelButton" dialogTitle="Select Data Directory"
+                                                dialogDirectory="true">Choose Folder
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="settingsFileSelDesc">All game files and local Java installations will be
+                                    stored in the data directory.<br>Screenshots and world saves are stored in the
+                                    instance folder for the corresponding server configuration.
+                                </div>
+                            </div>
+                        </div>
+                        <div id="settingsTabAbout" class="settingsTab" style="display: none;">
+                            <div class="settingsTabHeader">
+                                <span class="font-bold pl-2 text-yellow-500 text-small">A Propos</span>
+                                <span class="text-gray-800">Découvrez les informations du launcher.</span>
+                            </div>
+
+                            <div class="flex items-center justify-center mx-6 mt-10 ">
+                                <img id="settingsAboutLogo" class="h-10 rounded-lg" src="./assets/images/foxcraft.png"/>
+                                <span class="text-gray-600 dark:text-gray-300 ml-4 text-2xl font-bold"
+                                      id="settingsAboutTitle">
+                    FoxCraft Launcher
+                </span>
+                                <span class="text-gray-600 dark:text-gray-300 ml-2 font-bold">
+                         by Asuniia
+                    </span>
+                                <span id="settingsAboutCurrentVersionText">Version </span>
+                                <span id="settingsAboutCurrentVersionValue">0.0.1-alpha.12</span>
+                            </div>
+                            <a href="https://github.com/Asuniia" id="settingsAboutSupportButton"
+                               class="settingsAboutButton">Créateur</a>
+                        </div>
+                        <div id="settingsTabUpdate" class="settingsTab" style="display: none;">
+                            <div class="settingsTabHeader">
+                                <span class="font-bold pl-2 text-yellow-500 text-small">Mise à jour</span>
+                                <div id="settingsUpdateVersionLine">
+                                    <span id="settingsUpdateVersionText">Version </span>
+                                    <span id="settingsUpdateVersionValue">1.0.0</span>
+                                </div>
+                                <span class="text-gray-800">Téléchargez, installez et passez en revue les mises à jour du launcher.</span>
+                            </div>
+
+                            <span class="text-yellow-500 font-bold" id="settingsUpdateTitle">Vous utilisez la dernière version.</span>
+                            <div class="p-4">
+                                <button class="py-2 px-4 w-1/3 bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+                                        id="settingsUpdateActionButton">Vérifier les mise à jour
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4">
+                <button id="settingsNavDone" type="button"
+                        class="py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-1/4 transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                    Sauvegarder
+                </button>
+            </div>
+
+
+        </div>
+        <script src="./assets/js/scripts/settings.js"></script>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div id="landingContainer" style="display: none;"
+     class="container-fluid flex-1 justify-items-stretch justify-center items-center">
+
+    <div class="text-yellow-500 p-4 text-2xl">
+        <h3 class="font-bold pl-2">Accueil</h3>
+    </div>
+
+    <div class="container mx-auto ">
+        <div class="text-yellow-500 p-1 text-small">
+            <h3 id="user_text" class="font-bold pl-2"></h3>
+        </div>
+        <div class="relative bg-white md:w-full p-10">
+
+            <div id="lower">
+                <div id="center">
+                    <div id="launch_content">
+                    <button id="launch_button" type="button"
+                            class="py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                        Jouer
+                    </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div>
+                <div id="launch_details">
+                    <div class="bg-white rounded-lg w-72 shadow block p-4 m-auto">
+                        <div class="w-full h-2 bg-gray-400 rounded-full mt-3">
+                            <progress id="launch_progress"
+                                      class="h-full text-center text-xs text-white bg-green-500 rounded-full" value="22"
+                                      max="100"></progress>
+                        </div>
+                        <div id="launch_details_right">
+                        <span id="launch_details_text" class="bot_label">Please wait..</span>
+                        <span id="launch_progress_label">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    <!--        <div>
+                <div class="bot_wrapper">
+                    <div id="launch_content">
+                        <button id="server_selection_button" class="bot_label">&#8226; No Server Selected</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <script src="./assets/js/scripts/landing.js"></script>
+    </div>
+</div>

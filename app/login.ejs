@@ -1,0 +1,60 @@
+<div id="loginContainer" style="display: none;" class="container-fluid flex-1 justify-items-stretch justify-center items-center">
+
+    <div class="text-yellow-500 p-4 text-2xl">
+        <h3 class="font-bold pl-2">Connexion à votre compte Mojang</h3>
+    </div>
+
+    <div class="container mx-auto ">
+        <div class="relative bg-white md:w-full p-10">
+
+            <div>
+
+                <div id="loginCancelContainer" style="display: none;">
+                    <button id="loginCancelButton">
+                        <div id="loginCancelIcon">X</div>
+                        <span id="loginCancelText">Cancel</span>
+                    </button>
+                </div>
+
+                <div class="shadow-xl rounded-2xl p-4 bg-white dark:bg-gray-800 w-64 m-auto">
+                    <div class="w-full text-center">
+                        <div class="flex flex-col items-center justify-between">
+
+                            <form id="loginForm">
+
+                            <div class=" relative p-1">
+                                <span class="loginErrorSpan" id="loginEmailError">* Syntaxe invalide</span>
+                                <input type="text" id="loginUsername" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Votre adresse e-mail"/>
+                            </div>
+                            <br>
+                            <div class=" relative p-1">
+                                <span class="loginErrorSpan" id="loginPasswordError">* Requis</span>
+                                <input type="password" id="loginPassword" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Votre mot de passe"/>
+                            </div>
+
+
+                                <label id="checkmarkContainer" class="flex items-center space-x-3 mb-3 p-1">
+                                    <input type="checkbox" id="loginRememberOption" class="form-tick appearance-none bg-white bg-check h-6 w-6 border border-gray-300 rounded-md checked:bg-blue-500 checked:border-transparent focus:outline-none"/>
+                                    <span id="loginCheckmark" class="text-gray-700 dark:text-white font-normal">
+                Se souvenir de moi ?
+            </span>
+                                </label>
+
+
+                            <div class="flex items-center justify-between gap-4 w-full mt-8 p-1">
+                                <button id="loginButton" type="button" class="py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                                    Connexion
+                                </button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+                <script src="./assets/js/scripts/login.js"></script>
+            </div>
+        </div>
+</div>
