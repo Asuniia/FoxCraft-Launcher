@@ -12,6 +12,21 @@
         <div class="relative bg-white md:w-full p-10">
 
             <div id="lower">
+
+
+                <div id="ldetails" style="display: none;">
+                    <div class="bg-white rounded-lg w-full shadow block p-4 m-auto">
+                        <div class="w-full h-6 bg-gray-400 rounded-full mt-3">
+                            <span id="launch_details_text" class="bot_label">Veuillez patientez..</span>
+                            <div class="w-3/4 h-full text-center text-xs text-white bg-yellow-500 rounded-full">
+                                <a id="launch_progress" class="h-full text-center text-xs text-white bg-green-500 rounded-full"></a>
+                                <span id="launch_progress_label">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <progress id="launch_progress" class="h-full text-center text-xs text-white bg-green-500 rounded-full" value="0" max="100"></progress>
+                </div>
+
                 <div id="center">
                     <div id="launch_content">
                     <button id="launch_button" type="button"
@@ -21,24 +36,6 @@
                     </div>
                 </div>
             </div>
-
-
-            <div>
-                <div id="launch_details">
-                    <div class="bg-white rounded-lg w-72 shadow block p-4 m-auto">
-                        <div class="w-full h-2 bg-gray-400 rounded-full mt-3">
-                            <progress id="launch_progress"
-                                      class="h-full text-center text-xs text-white bg-green-500 rounded-full" value="22"
-                                      max="100"></progress>
-                        </div>
-                        <div id="launch_details_right">
-                        <span id="launch_details_text" class="bot_label">Please wait..</span>
-                        <span id="launch_progress_label">0%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
 
     <!--        <div>
                 <div class="bot_wrapper">

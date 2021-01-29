@@ -438,7 +438,7 @@ function populateAuthAccounts() {
         const acc = authAccounts[val]
         authAccountStr += `<div class="settingsAuthAccount shadow-lg rounded-2xl w-80 p-4 bg-white dark:bg-gray-800" uuid="${acc.uuid}">
 
-                                    <div class="flex flex-row justify-center gap-4">
+                                    <div class="flex flex-row justify-center">
                                        <img class="settingsAuthAccountImage w-28 h-28 rounded-lg" alt="${acc.displayName}" src="https://crafatar.com/avatars/${acc.uuid}?scale=32&default=MHF_Steve&overlay">
                                         <div class="h-28 w-full flex flex-col justify-between">
                                             <div>

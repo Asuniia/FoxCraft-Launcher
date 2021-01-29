@@ -43,6 +43,7 @@ function initAutoUpdater(event, data) {
 }
 
 // Open channel to listen for update actions.
+
 ipcMain.on('autoUpdateAction', (event, arg, data) => {
     switch(arg){
         case 'initAutoUpdater':

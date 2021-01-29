@@ -2627,14 +2627,6 @@ input:checked + .toggleSwitchSlider:before {
  *                                                                             *
  ******************************************************************************/
 
-/* Style for a general label on the bottom of the landing view. */
-.bot_label {
-    font-size: 9px;
-    letter-spacing: 1px;
-    font-weight: bold;
-    text-shadow: 0px 0px 0px #bebcbb;
-}
-
 /* Divider used on the bottom of the landing view. */
 .bot_divider {
     height: 25px;
@@ -2844,27 +2836,11 @@ input:checked + .toggleSwitchSlider:before {
 /* The launch button. */
 
 
-/* Launch details main container, hidden until launch processing begins. */
-#launch_details {
-    position: relative;
-    top: 25px;
-    display: none;
-}
+
  
 /* Left side of launch details container, displays percentage and a divider. */
 #launch_details_left {
     display: flex;
-}
-
-/* Span which displays percentage complete. */
-#launch_progress_label {
-    font-weight: 900;
-    letter-spacing: 1px;
-    text-shadow: 0px 0px 0px #000000;
-    font-size: 20px;
-    min-width: 53.21px;
-    max-width: 53.21px;
-    text-align: right;
 }
 
 /* Right side of launch details container, displays progress bar and details. */
@@ -2891,14 +2867,6 @@ input:checked + .toggleSwitchSlider:before {
 #server_selection_button:active {
     color: #c7c7c7;
     text-shadow: 0px 0px 20px #c7c7c7, 0px 0px 20px #c7c7c7, 0px 0px 20px #c7c7c7;
-}
-
-/* Span which displays information about the status of the launch process. */
-#launch_details_text {
-    font-size: 11px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
 }
 
 /*******************************************************************************

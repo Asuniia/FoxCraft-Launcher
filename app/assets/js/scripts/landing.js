@@ -13,7 +13,7 @@ const ServerStatus            = require('./assets/js/serverstatus')
 
 // Launch Elements
 const launch_content          = document.getElementById('launch_content')
-const launch_details          = document.getElementById('launch_details')
+const launch_details          = document.getElementById('ldetails')
 const launch_progress         = document.getElementById('launch_progress')
 const launch_progress_label   = document.getElementById('launch_progress_label')
 const launch_details_text     = document.getElementById('launch_details_text')
@@ -35,7 +35,7 @@ function toggleLaunchArea(loading){
         launch_content.style.display = 'none'
     } else {
         launch_details.style.display = 'none'
-        launch_content.style.display = 'inline-flex'
+        launch_content.style.display = 'flex'
     }
 }
 
@@ -417,6 +417,16 @@ function dlAsync(login = true){
     if(login) {
         if(ConfigManager.getSelectedAccount() == null){
             loggerLanding.error('Vous devez être connecté à un compte.')
+            setOverlayContent(
+                'Pas connecté.',
+                'Vous n\'avez pas de compte actif. Vous devez vous connecter pour pouvoir lancer le jeu.',
+                'Je comprend.'
+            )
+            setOverlayHandler(() => {
+                toggleOverlay(false)
+                toggleLaunchArea(false)
+            })
+            toggleOverlay(true)
             return
         }
     }
