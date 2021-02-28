@@ -406,9 +406,11 @@ exports.removeAuthAccount = function(uuid){
 }
 
 exports.removeAllAuthAccount = function(){
-    if(config.authenticationDatabase) {
+    if(config.authenticationDatabase != null) {
         delete config.authenticationDatabase
         config.selectedAccount = null
+        config.clientToken = null
+        config.token = null
         return true
     }
     return false

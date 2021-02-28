@@ -17,7 +17,7 @@ ConfigManager.load()
 LangLoader.loadLanguage('fr_FR')
 function onDistroLoad(data){
     if(data != null){
-        
+
         if(ConfigManager.getSelectedServer() == null || data.getServer(ConfigManager.getSelectedServer()) == null){
             logger.log('Détermination du serveur sélectionné par défaut..')
             ConfigManager.setSelectedServer(data.getMainServer().getID())

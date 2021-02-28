@@ -50,7 +50,7 @@ function showMainUI(data){
     setTimeout(() => {
         const isLoggedIn = Object.keys(ConfigManager.getAuthAccounts()).length > 0
 
-        if(!isDev && isLoggedIn){
+        if(isLoggedIn){
             validateSelectedAccount()
         }
 
@@ -58,11 +58,9 @@ function showMainUI(data){
             currentView = VIEWS.welcome
             $(VIEWS.welcome).fadeIn(1000)
         } else {
-            if(isLoggedIn){
-                AuthManager.getuser(ConfigManager.getToken());
+            if (isLoggedIn) {
                 currentView = VIEWS.landing
                 $(VIEWS.landing).fadeIn(1000)
-
             } else {
                 currentView = VIEWS.login
                 $(VIEWS.login).fadeIn(1000)
@@ -259,20 +257,18 @@ function refreshDistributionIndex(remote, onSuccess, onError){
 async function validateSelectedAccount(){
     const selectedAcc = ConfigManager.getSelectedAccount()
     if(selectedAcc != null){
-        const val = await AuthManager.validateSelected()
+        const val = await AuthManager.getuser(ConfigManager.getToken())
         if(!val){
+            switchView(getCurrentView(),VIEWS.login)
             ConfigManager.removeAuthAccount(selectedAcc.uuid)
             ConfigManager.save()
             const accLen = Object.keys(ConfigManager.getAuthAccounts()).length
             setOverlayContent(
                 'Erreur de récupération',
-                `Impossible de récupérer <strong>${selectedAcc.displayName}</strong>. Veuillez ${accLen > 0 ? 'choisir ou ' : ''} ressayer.`,
+                `Impossible de récupérer <strong>${selectedAcc.displayName}</strong>. Veuillez vous connecter.`,
                 'Connexion',
-                'Choisir'
             )
             setOverlayHandler(() => {
-                document.getElementById('loginUsername').value = selectedAcc.username
-                validateEmail(selectedAcc.username)
                 loginViewOnSuccess = getCurrentView()
                 loginViewOnCancel = getCurrentView()
                 if(accLen > 0){
@@ -284,7 +280,6 @@ async function validateSelectedAccount(){
                     loginCancelEnabled(true)
                 }
                 toggleOverlay(false)
-                switchView(getCurrentView(), VIEWS.login)
             })
             setDismissHandler(() => {
                 if(accLen > 1){

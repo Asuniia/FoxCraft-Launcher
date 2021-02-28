@@ -1,11 +1,11 @@
 {
   "name": "foxcraftlauncher",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "productName": "FoxCraft Launcher",
   "description": "Launcher FoxCraft",
   "author": "Asuniia (https://github.com/Asuniia/)",
   "license": "GNU",
-  "private": true,
+  "private": false,
   "main": "index.js",
   "scripts": {
     "start": "electron .",

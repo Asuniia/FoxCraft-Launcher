@@ -100,17 +100,11 @@ exports.getuser = async function(token){
             console.log(session.ip)
         } catch(err) {
             logger.debug('Error while validating selected profile:', err)
-            if(err && err.error === 'ForbiddenOperationException'){
-                // What do we do?
-            }
-            ConfigManager.removeAllAuthAccount();
-            ConfigManager.save()
-            switchView(currentView,VIEWS.login)
             logger.log('Account access token is invalid.')
-            return true
+            return false
         }
         loggerSuccess.log('Account access token validated.')
-        return false
+        return true
 }
 
 exports.validauth = async function(token){

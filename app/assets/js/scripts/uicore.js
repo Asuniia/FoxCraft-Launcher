@@ -107,8 +107,6 @@ document.addEventListener('readystatechange', function () {
 
         if(ConfigManager.getThemeMode() === true) {
             document.querySelector("html").setAttribute("class","dark");
-        } else {
-            console.log("BLANC")
         }
 
         Array.from(document.getElementsByClassName('fCb')).map((val) => {
