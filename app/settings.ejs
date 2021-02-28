@@ -6,24 +6,24 @@
     </div>
 
     <div class="container mx-auto ">
-        <div class="relative bg-white md:w-full p-5">
+        <div class="relative light:bg-white dark:bg-gray-800 md:w-full p-5">
 
-            <div class="relative bg-white md:w-full p-3 rounded-lg shadow-2xl">
+            <div class="relative light:bg-white dark:bg-gray-800 md:w-full p-3 rounded-lg shadow-2xl">
                 <div class="grid grid-cols-5 gap-1">
 
-                    <button class="settingsNavItem py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+                    <button class="settingsNavItem py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-yellow-700 focus:ring-yellow-500 focus:ring-offset-yellow-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
                             rSc="settingsTabAccount" id="settingsNavAccount" selected>Compte
                     </button>
-                    <button class="settingsNavItem py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
-                            rSc="settingsTabMinecraft">Minecraft
+                    <button class="settingsNavItem py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-yellow-500 focus:ring-offset-yellow-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+                            rSc="settingsTabMinecraft">Launcher
                     </button>
-                    <button class="settingsNavItem py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+                    <button class="settingsNavItem py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-yellow-500 focus:ring-offset-yellow-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
                             rSc="settingsTabJava">Java
                     </button>
-                    <button class="settingsNavItem py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+                    <button class="settingsNavItem py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-yellow-500 focus:ring-offset-yellow-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
                             rSc="settingsTabAbout">A Propos
                     </button>
-                    <button class="settingsNavItem py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+                    <button class="settingsNavItem py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-yellow-500 focus:ring-offset-yellow-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
                             rSc="settingsTabUpdate" id="settingsNavUpdate">Mise à jour
                     </button>
                 </div>
@@ -37,7 +37,7 @@
                         <div id="settingsTabAccount" class="settingsTab">
                             <div class="settingsTabHeader">
                                 <span class="font-bold pl-2 text-yellow-500 text-small">Vos comptes</span>
-                                <span class="text-gray-800">Gérer vos comptes Minecraft depuis ici.</span>
+                                <span class="light:text-gray-800 dark:text-gray-200">Gérer vos comptes Minecraft depuis ici.</span>
                             </div>
 
                             <div class="flex items-center">
@@ -46,11 +46,23 @@
                         </div>
                         <div id="settingsTabMinecraft" class="settingsTab" style="display: none;">
                             <div class="settingsTabHeader">
-                                <span class="font-bold pl-2 text-yellow-500 text-small">Minecraft</span>
-                                <span class="text-gray-800">Régler les paramètre de jeu depuis le launcher.</span>
+                                <span class="font-bold pl-2 text-yellow-500 text-small">Launcher</span>
+                                <span class="light:text-gray-800 dark:text-gray-200">Régler les paramètre du launcher facilement.</span>
                             </div>
 
-                            Soon :)
+                            <div>
+                                <div class="mb-3">
+                                    <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                                        <input type="checkbox" cValue="ThemeMode" name="toggle" id="Blue" class="checked:bg-yellow-500 outline-none focus:outline-none right-4 checked:right-0 duration-200 ease-in absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                                        <label for="Blue" class="block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer">
+                                        </label>
+                                    </div>
+                                    <span class="text-gray-400 font-medium">
+                                    Activer le mode sombre
+                                </span>
+                                </div>
+                                <span class="text-red-500 dark:text-red-500 text-sm font-bold">Un redémarrage du launcher sera nécessaire.</span>
+                            </div>
 
                         </div>
                         <div id="settingsTabMods" class="settingsTab" style="display: none;">
@@ -111,7 +123,7 @@
                         <div id="settingsTabJava" class="settingsTab" style="display: none;">
                             <div class="settingsTabHeader">
                                 <span class="font-bold pl-2 text-yellow-500 text-small">Java & RAM</span>
-                                <span class="text-gray-800">Configurer votre Java et la RAM alloué.</span>
+                                <span class="light:text-gray-800 dark:text-gray-200">Configurer votre Java et la RAM alloué.</span>
                             </div>
                             <div id="settingsMemoryContainer">
                                 <div id="settingsMemoryContent">
@@ -205,7 +217,7 @@
                         <div id="settingsTabAbout" class="settingsTab" style="display: none;">
                             <div class="settingsTabHeader">
                                 <span class="font-bold pl-2 text-yellow-500 text-small">A Propos</span>
-                                <span class="text-gray-800">Découvrez les informations du launcher.</span>
+                                <span class="light:text-gray-800 dark:text-gray-200">Découvrez les informations du launcher.</span>
                             </div>
 
                             <div class="flex items-center justify-center mx-6 mt-10 ">
@@ -217,8 +229,6 @@
                                 <span class="text-gray-600 dark:text-gray-300 ml-2 font-bold">
                          by Asuniia
                     </span>
-                                <span id="settingsAboutCurrentVersionText">Version </span>
-                                <span id="settingsAboutCurrentVersionValue">0.0.1-alpha.12</span>
                             </div>
                             <a href="https://github.com/Asuniia" id="settingsAboutSupportButton"
                                class="settingsAboutButton">Créateur</a>
@@ -230,12 +240,12 @@
                                     <span id="settingsUpdateVersionText">Version </span>
                                     <span id="settingsUpdateVersionValue">1.0.0</span>
                                 </div>
-                                <span class="text-gray-800">Téléchargez, installez et passez en revue les mises à jour du launcher.</span>
+                                <span class="light:text-gray-800 dark:text-gray-200">Téléchargez, installez et passez en revue les mises à jour du launcher.</span>
                             </div>
 
                             <span class="text-yellow-500 font-bold" id="settingsUpdateTitle">Vous utilisez la dernière version.</span>
                             <div class="p-4">
-                                <button class="py-2 px-4 w-1/3 bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+                                <button class="py-2 px-4 w-1/2 bg-gradient-to-r from-yellow-400 to-yellow-600 focus:ring-yellow-500 focus:ring-offset-yellow-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
                                         id="settingsUpdateActionButton">Vérifier les mise à jour
                                 </button>
                             </div>
@@ -247,7 +257,7 @@
 
             <div class="p-4">
                 <button id="settingsNavDone" type="button"
-                        class="py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-1/4 transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                        class="py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-yellow-500 focus:ring-offset-yellow-200 text-white w-1/4 transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
                     Sauvegarder
                 </button>
             </div>

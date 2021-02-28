@@ -35,10 +35,10 @@ builder.build({
             ]
         },
         nsis: {
-            oneClick: false,
+            oneClick: true,
             perMachine: false,
             allowElevation: true,
-            allowToChangeInstallationDirectory: true
+            allowToChangeInstallationDirectory: false
         },
         mac: {
             target: 'dmg',

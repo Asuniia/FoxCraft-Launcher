@@ -1,6 +1,5 @@
 <div id="landingContainer" style="display: none;"
      class="container-fluid flex-1 justify-items-stretch justify-center items-center">
-
     <div class="text-yellow-500 p-4 text-2xl">
         <h3 class="font-bold pl-2">Accueil</h3>
     </div>
@@ -9,42 +8,77 @@
         <div class="text-yellow-500 p-1 text-small">
             <h3 id="user_text" class="font-bold pl-2"></h3>
         </div>
-        <div class="relative bg-white md:w-full p-10">
+
+
+        <div class="relative light:bg-white dark:bg-gray-800 md:w-full p-10">
 
             <div id="lower">
 
-
                 <div id="ldetails" style="display: none;">
-                    <div class="bg-white rounded-lg w-full shadow block p-4 m-auto">
-                        <div class="w-full h-6 bg-gray-400 rounded-full mt-3">
+                    <div class="light:bg-white dark:bg-gray-800 rounded-lg w-full shadow-2xl block p-4 m-auto">
+                        <div class="w-full h-full text-center rounded shim-red rounded-full">
                             <span id="launch_details_text" class="bot_label">Veuillez patientez..</span>
-                            <div class="w-3/4 h-full text-center text-xs text-white bg-yellow-500 rounded-full">
-                                <a id="launch_progress" class="h-full text-center text-xs text-white bg-green-500 rounded-full"></a>
-                                <span id="launch_progress_label">0%</span>
-                            </div>
+                            <span id="launch_progress_label">0%</span>
                         </div>
                     </div>
-                    <progress id="launch_progress" class="h-full text-center text-xs text-white bg-green-500 rounded-full" value="0" max="100"></progress>
                 </div>
+                <progress id="launch_progress" class="h-full text-center text-xs text-white bg-green-500 rounded-full"
+                          value="0" max="100"></progress>
 
                 <div id="center">
                     <div id="launch_content">
-                    <button id="launch_button" type="button"
-                            class="py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-                        Jouer
-                    </button>
+                        <button id="launch_button" type="button"
+                                class="py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 focus:ring-yellow-500 focus:ring-offset-yellow-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                            Jouer
+                        </button>
                     </div>
-                </div>
-            </div>
 
-    <!--        <div>
-                <div class="bot_wrapper">
-                    <div id="launch_content">
-                        <button id="server_selection_button" class="bot_label">&#8226; No Server Selected</button>
+
+                    <div class="flex justify-between relative m-5">
+                        <a type="button" href="https://twitter.com/FoxCraft_FR"
+                                class="py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 focus:ring-yellow-500 focus:ring-offset-yellow-200 text-white  transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                                                                                <span class="text-white">
+                            <svg width="20" height="20" viewBox="0 -47 512.00203 512" fill="currentColor"
+                                 xmlns="http://www.w3.org/2000/svg"><path
+                                        d="m191.011719 419.042969c-22.140625 0-44.929688-1.792969-67.855469-5.386719-40.378906-6.335938-81.253906-27.457031-92.820312-33.78125l-30.335938-16.585938 32.84375-10.800781c35.902344-11.804687 57.742188-19.128906 84.777344-30.597656-27.070313-13.109375-47.933594-36.691406-57.976563-67.175781l-7.640625-23.195313 6.265625.957031c-5.941406-5.988281-10.632812-12.066406-14.269531-17.59375-12.933594-19.644531-19.78125-43.648437-18.324219-64.21875l1.4375-20.246093 12.121094 4.695312c-5.113281-9.65625-8.808594-19.96875-10.980469-30.777343-5.292968-26.359376-.863281-54.363282 12.476563-78.851563l10.558593-19.382813 14.121094 16.960938c44.660156 53.648438 101.226563 85.472656 168.363282 94.789062-2.742188-18.902343-.6875-37.144531 6.113281-53.496093 7.917969-19.039063 22.003906-35.183594 40.722656-46.691407 20.789063-12.777343 46-18.96875 70.988281-17.433593 26.511719 1.628906 50.582032 11.5625 69.699219 28.746093 9.335937-2.425781 16.214844-5.015624 25.511719-8.515624 5.59375-2.105469 11.9375-4.496094 19.875-7.230469l29.25-10.078125-19.074219 54.476562c1.257813-.105468 2.554687-.195312 3.910156-.253906l31.234375-1.414062-18.460937 25.230468c-1.058594 1.445313-1.328125 1.855469-1.703125 2.421875-1.488282 2.242188-3.339844 5.03125-28.679688 38.867188-6.34375 8.472656-9.511718 19.507812-8.921875 31.078125 2.246094 43.96875-3.148437 83.75-16.042969 118.234375-12.195312 32.625-31.09375 60.617187-56.164062 83.199219-31.023438 27.9375-70.582031 47.066406-117.582031 56.847656-23.054688 4.796875-47.8125 7.203125-73.4375 7.203125zm0 0"/></svg>
+                                                                                </span>
+                        </a>
+
+                        <a type="button" href="https://discord.gg/vtSCGVYwvV"
+                                class="py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 focus:ring-yellow-500 focus:ring-offset-yellow-200 text-white  transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                                                                                <span class="text-white">
+                            <svg id="Bold" fill="currentColor" height="20" viewBox="0 0 24 24" width="20"
+                                 xmlns="http://www.w3.org/2000/svg"><path
+                                        d="m3.58 21.196h14.259l-.681-2.205 1.629 1.398 1.493 1.338 2.72 2.273v-21.525c-.068-1.338-1.22-2.475-2.648-2.475l-16.767.003c-1.427 0-2.585 1.139-2.585 2.477v16.24c0 1.411 1.156 2.476 2.58 2.476zm10.548-15.513-.033.012.012-.012zm-7.631 1.269c1.833-1.334 3.532-1.27 3.532-1.27l.137.135c-2.243.535-3.26 1.537-3.26 1.537s.272-.133.747-.336c3.021-1.188 6.32-1.102 9.374.402 0 0-1.019-.937-3.124-1.537l.186-.183c.291.001 1.831.055 3.479 1.26 0 0 1.844 3.15 1.844 7.02-.061-.074-1.144 1.666-3.931 1.726 0 0-.472-.534-.808-1 1.63-.468 2.24-1.404 2.24-1.404-.535.337-1.023.537-1.419.737-.609.268-1.219.4-1.828.535-2.884.468-4.503-.315-6.033-.936l-.523-.266s.609.936 2.174 1.404c-.411.469-.818 1.002-.818 1.002-2.786-.066-3.802-1.806-3.802-1.806 0-3.876 1.833-7.02 1.833-7.02z"/><path
+                                        d="m14.308 12.771c.711 0 1.29-.6 1.29-1.34 0-.735-.576-1.335-1.29-1.335v.003c-.708 0-1.288.598-1.29 1.338 0 .734.579 1.334 1.29 1.334z"/><path
+                                        d="m9.69 12.771c.711 0 1.29-.6 1.29-1.34 0-.735-.575-1.335-1.286-1.335l-.004.003c-.711 0-1.29.598-1.29 1.338 0 .734.579 1.334 1.29 1.334z"/></svg>
+                                                                                </span>
+
+                        </a>
+
+                        <a type="button" href="https://www.youtube.com/channel/UCxPbBmMV4BwMUJ2YENZa6WA"
+                                class="py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 focus:ring-yellow-500 focus:ring-offset-yellow-200 text-white  transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+
+                                                                                <span class="text-white">
+                            <svg height="20" fill="currentColor" viewBox="-21 -117 682.66672 682" width="20"
+                                 xmlns="http://www.w3.org/2000/svg"><path
+                                        d="m626.8125 64.035156c-7.375-27.417968-28.992188-49.03125-56.40625-56.414062-50.082031-13.703125-250.414062-13.703125-250.414062-13.703125s-200.324219 0-250.40625 13.183593c-26.886719 7.375-49.03125 29.519532-56.40625 56.933594-13.179688 50.078125-13.179688 153.933594-13.179688 153.933594s0 104.378906 13.179688 153.933594c7.382812 27.414062 28.992187 49.027344 56.410156 56.410156 50.605468 13.707031 250.410156 13.707031 250.410156 13.707031s200.324219 0 250.40625-13.183593c27.417969-7.378907 49.03125-28.992188 56.414062-56.40625 13.175782-50.082032 13.175782-153.933594 13.175782-153.933594s.527344-104.382813-13.183594-154.460938zm-370.601562 249.878906v-191.890624l166.585937 95.945312zm0 0"/></svg>
+                                                                                </span>
+
+                        </a>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
+
+        <!--        <div>
+                    <div class="bot_wrapper">
+                        <div id="launch_content">
+                            <button id="server_selection_button" class="bot_label">&#8226; No Server Selected</button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
         <script src="./assets/js/scripts/landing.js"></script>
     </div>
 </div>

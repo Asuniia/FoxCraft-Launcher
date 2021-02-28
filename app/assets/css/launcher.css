@@ -32,6 +32,7 @@
 body, html, div {
     margin: 0px;
     padding: 0px;
+    -webkit-user-select: none;
 }
 
 /* Reset p presets. */
@@ -41,9 +42,89 @@ p {
 }
 
 /* Set default font and color. */
-body, button {
+
+body , button , span,a{
+    -webkit-user-select: none;
+    -webkit-app-region: no-drag;
     font-family: 'Avenir Book';
     color: white;
+}
+
+.dragNo {
+    -webkit-app-region: no-drag;
+}
+/*
+ Toast by Asuniia
+ */
+.toastWrap {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 200px;
+    pointer-events: none;
+}
+.toastWrap .toast {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-family: 'Work Sans', sans-serif;
+    text-align: center;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    -webkit-animation: showtoast cubic-bezier(0.23, 1, 0.32, 1) 4s forwards;
+    animation: showtoast cubic-bezier(0.23, 1, 0.32, 1) 4s forwards;
+    box-sizing: border-box;
+}
+.toastWrap .toast.success {
+    background-color: rgba(152, 255, 28, 0.6);
+    box-shadow: 0 5px 20px rgba(152, 255, 28, 0.5);
+    color: #63b500;
+}
+.toastWrap .toast.warning {
+    background-color: rgba(255, 186, 28, 0.8);
+    box-shadow: 0 5px 20px rgba(255, 186, 28, 0.5);
+    color: #825a00;
+}
+.toastWrap .toast.error {
+    background-color: rgba(255, 75, 58, 0.9);
+    box-shadow: 0 10px 40px rgba(255, 75, 58, 0.8);
+    color: #6d0900;
+}
+
+@keyframes showtoast {
+    0% {
+        -webkit-transform: translateY(-160px);
+        transform: translateY(-160px);
+        opacity: 0;
+    }
+    20% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    95% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(0.95);
+        transform: scale(0.95);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+body { background: white; color: black; }
+
+@media (prefers-color-scheme: light) {
+    body { background: white; color: black; }
+}
+
+@media (prefers-color-scheme: dark) {
+    body { background: black; color: white; }
 }
 
 /*body {
@@ -57,8 +138,14 @@ body, button {
  *                                                                             *
  ******************************************************************************/
 
+.dragQueenMdr {
+    -webkit-app-region: drag !important;
+}
+
+
 /* Frame Bar */
 #frameBar {
+    -webkit-app-region: drag !important;
     position: relative;
     z-index: 100;
     display: flex;
@@ -75,6 +162,7 @@ body, button {
 
 /* Flexbox to wrap the main frame content. */
 #frameMain {
+    -webkit-app-region: drag !important;
     display: flex;
     height: 20px
 }
@@ -154,10 +242,28 @@ body, button {
 /* Close button is red. */
 #frameButton_close:hover,
 #frameButton_close:focus {
-    background: rgba(255, 53, 53, 0.61) !important;
+    background: #EF4444 !important;
 }
 #frameButton_close:active {
-    background: rgba(235, 0, 0, 0.61) !important;
+    background: #EF4444 !important;
+}
+
+/* Reduire button is orange. */
+#frameButton_reduct:hover,
+#frameButton_reduct:focus {
+    background: #F59E0B !important;
+}
+#frameButton_reduct:active {
+    background: #F59E0B !important;
+}
+
+/* Agrandir button is vert. */
+#frameButton_max:hover,
+#frameButton_max:focus {
+    background: #059669 !important;
+}
+#frameButton_max:active {
+    background: #059669 !important;
 }
 
 /* Darwin Frame Button Styles. */
@@ -443,6 +549,35 @@ body, button {
     font-size: 12px;
     letter-spacing: 1px;
     font-weight: bold;
+}
+
+.shim-red {
+    position: relative;
+    overflow: hidden;
+    background-color: #F59E0B;
+}
+.shim-red::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+            90deg,
+            rgba(233, 233, 233, 1) 0,
+            rgba(233, 233, 233, 0.9) 50%,
+            rgba(233, 233, 233, 0.8) 100%
+    );
+    animation: shimmer 3s ease-out infinite;
+    content: "";
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(0%);
+        opacity: 0;
+    }
 }
 
 /* Container to organize login field elements. */

@@ -1,12 +1,12 @@
 {
     "html": {
-        "avatarOverlay": "Modigier"
+        "avatarOverlay": "Modifier"
     },
     "js": {
         "login": {
             "error": {
-                "invalidValue": "* Syntaxe Invalide",
-                "requiredValue": "* Requis",
+                "invalidValue": "Syntaxe Invalide",
+                "requiredValue": "Obligatoire",
                 "userMigrated": {
                     "title": "Mauvaise migration identifiant",
                     "desc": "Vous avez tenté de vous connecter avec un compte migré. Essayez à nouveau en utilisant l'adresse e-mail du compte comme nom d'utilisateur."
@@ -25,19 +25,34 @@
                 },
                 "authDown": {
                     "title": "Serveur d'authentification hors ligne",
-                    "desc": "Le serveur d'authentification de Mojang est actuellement hors ligne ou inaccessible. Veuillez patienter un peu et réessayer. Vous pouvez vérifier l'état du serveur sur le <a href=\"https://help.mojang.com/\"> portail d'aide de Mojang </a>."
+                    "desc": "Le serveur d'authentification de FoxCraft est actuellement hors ligne ou inaccessible. Veuillez patienter un peu et réessayer."
+                },
+                "alreadyUsernameAccount": {
+                    "title": "Déjà pris",
+                    "desc": "Le nom d'utilisateur est déjà pris par un utilisateur."
+                },
+                "alreadyEmailAccount": {
+                    "title": "Déjà pris",
+                    "desc": "L'adresse email est déjà pris par un utilisateur."
+                },
+                "incorrectAccount": {
+                    "title": "Compte invalide",
+                    "desc": "Le compte que vous avez renseigné existe pas."
                 },
                 "notPaid": {
                     "title": "Jeu non acheté",
                     "desc": "Le compte avec lequel vous essayez de vous connecter n'a pas acheté une copie de Minecraft. <br> Vous pouvez en acheter une copie sur <a href=\"https://minecraft.net/\"> Minecraft.net </a>"
                 },
                 "unknown": {
-                    "title": "Erreur iconnue"
+                    "title": "Erreur inconnue"
                 }
             },
             "login": "Connexion",
+            "incrise": "Inscription",
             "loggingIn": "Connexion en cours..",
             "success": "Connecté",
+            "incrisIn": "Inscription en cours..",
+            "incris": "Inscription réussi",
             "tryAgain": "Réessayer"
         },
         "landing": {

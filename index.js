@@ -1,4 +1,3 @@
-// Requirements
 const { app, BrowserWindow, ipcMain, Menu } = require('electron')
 const autoUpdater                   = require('electron-updater').autoUpdater
 const ejse                          = require('ejs-electron')
@@ -8,14 +7,12 @@ const path                          = require('path')
 const semver                        = require('semver')
 const url                           = require('url')
 
-// Setup auto updater.
 function initAutoUpdater(event, data) {
 
     if(data){
         autoUpdater.allowPrerelease = true
     } else {
-        // Defaults to true if application version contains prerelease components (e.g. 0.12.1-alpha.1)
-        // autoUpdater.allowPrerelease = true
+
     }
     
     if(isDev){
@@ -148,6 +145,8 @@ function createMenu() {
                 accelerator: 'Command+Q',
                 click: () => {
                     app.quit()
+                    if(MSALoginWindow !== null) MSALoginWindow.close()
+                    MSALoginWindow = null
                 }
             }]
         }

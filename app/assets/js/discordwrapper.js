@@ -1,4 +1,3 @@
-// Work in progress
 const logger = require('./loggerutil')('%c[DiscordWrapper]', 'color: #7289da; font-weight: bold')
 
 const {Client} = require('discord-rpc')
@@ -6,12 +5,12 @@ const {Client} = require('discord-rpc')
 let client
 let activity
 
-exports.initRPC = function(genSettings, servSettings, initialDetails = 'Waiting for Client..'){
+exports.initRPC = function(genSettings, servSettings, initialDetails = 'Attente du jeu..'){
     client = new Client({ transport: 'ipc' })
 
     activity = {
         details: initialDetails,
-        state: 'Server: ' + servSettings.shortId,
+        state: 'FoxCraft : ' + servSettings.shortId,
         largeImageKey: servSettings.largeImageKey,
         largeImageText: servSettings.largeImageText,
         smallImageKey: genSettings.smallImageKey,
@@ -21,7 +20,7 @@ exports.initRPC = function(genSettings, servSettings, initialDetails = 'Waiting 
     }
 
     client.on('ready', () => {
-        logger.log('Discord RPC Connected')
+        logger.log('RPC lancé')
         client.setActivity(activity)
     })
     

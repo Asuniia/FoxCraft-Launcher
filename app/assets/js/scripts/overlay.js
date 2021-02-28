@@ -1,35 +1,15 @@
-/**
- * Script for overlay.ejs
- */
-
-/* Overlay Wrapper Functions */
-
-/**
- * Check to see if the overlay is visible.
- * 
- * @returns {boolean} Whether or not the overlay is visible.
- */
 function isOverlayVisible(){
     return document.getElementById('main').hasAttribute('overlay')
 }
 
 let overlayHandlerContent
 
-/**
- * Overlay keydown handler for a non-dismissable overlay.
- * 
- * @param {KeyboardEvent} e The keydown event.
- */
 function overlayKeyHandler (e){
     if(e.key === 'Enter' || e.key === 'Escape'){
         document.getElementById(overlayHandlerContent).getElementsByClassName('overlayKeybindEnter')[0].click()
     }
 }
-/**
- * Overlay keydown handler for a dismissable overlay.
- * 
- * @param {KeyboardEvent} e The keydown event.
- */
+
 function overlayKeyDismissableHandler (e){
     if(e.key === 'Enter'){
         document.getElementById(overlayHandlerContent).getElementsByClassName('overlayKeybindEnter')[0].click()
@@ -38,13 +18,6 @@ function overlayKeyDismissableHandler (e){
     }
 }
 
-/**
- * Bind overlay keydown listeners for escape and exit.
- * 
- * @param {boolean} state Whether or not to add new event listeners.
- * @param {string} content The overlay content which will be shown.
- * @param {boolean} dismissable Whether or not the overlay is dismissable 
- */
 function bindOverlayKeys(state, content, dismissable){
     overlayHandlerContent = content
     document.removeEventListener('keydown', overlayKeyHandler)
@@ -58,13 +31,6 @@ function bindOverlayKeys(state, content, dismissable){
     }
 }
 
-/**
- * Toggle the visibility of the overlay.
- * 
- * @param {boolean} toggleState True to display, false to hide.
- * @param {boolean} dismissable Optional. True to show the dismiss option, otherwise false.
- * @param {string} content Optional. The content div to be shown.
- */
 function toggleOverlay(toggleState, dismissable = false, content = 'overlayContent'){
     if(toggleState == null){
         toggleState = !document.getElementById('main').hasAttribute('overlay')
@@ -77,7 +43,6 @@ function toggleOverlay(toggleState, dismissable = false, content = 'overlayConte
     if(toggleState){
         document.getElementById('main').setAttribute('overlay', true)
         // Make things untabbable.
-        $('#main *').attr('tabindex', '-1')
         $('#' + content).parent().children().hide()
         $('#' + content).show()
         if(dismissable){
@@ -99,11 +64,6 @@ function toggleOverlay(toggleState, dismissable = false, content = 'overlayConte
         $('#main *').removeAttr('tabindex')
         $('#overlayContainer').fadeOut({
             duration: 250,
-            start: () => {
-                if(getCurrentView() === VIEWS.settings){
-                    document.getElementById('settingsContainer').style.backgroundColor = 'rgba(0, 0, 0, 0.50)'
-                }
-            },
             complete: () => {
                 $('#' + content).parent().children().hide()
                 $('#' + content).show()
@@ -122,14 +82,6 @@ function toggleServerSelection(toggleState){
     toggleOverlay(toggleState, true, 'serverSelectContent')
 }
 
-/**
- * Set the content of the overlay.
- * 
- * @param {string} title Overlay title text.
- * @param {string} description Overlay description text.
- * @param {string} acknowledge Acknowledge button text.
- * @param {string} dismiss Dismiss button text.
- */
 function setOverlayContent(title, description, acknowledge, dismiss = 'Dismiss'){
     document.getElementById('overlayTitle').innerHTML = title
     document.getElementById('overlayDesc').innerHTML = description
@@ -137,12 +89,6 @@ function setOverlayContent(title, description, acknowledge, dismiss = 'Dismiss')
     document.getElementById('overlayDismiss').innerHTML = dismiss
 }
 
-/**
- * Set the onclick handler of the overlay acknowledge button.
- * If the handler is null, a default handler will be added.
- * 
- * @param {function} handler 
- */
 function setOverlayHandler(handler){
     if(handler == null){
         document.getElementById('overlayAcknowledge').onclick = () => {
@@ -153,12 +99,6 @@ function setOverlayHandler(handler){
     }
 }
 
-/**
- * Set the onclick handler of the overlay dismiss button.
- * If the handler is null, a default handler will be added.
- * 
- * @param {function} handler 
- */
 function setDismissHandler(handler){
     if(handler == null){
         document.getElementById('overlayDismiss').onclick = () => {
@@ -168,37 +108,6 @@ function setDismissHandler(handler){
         document.getElementById('overlayDismiss').onclick = handler
     }
 }
-
-/* Server Select View */
-
-
-document.getElementById('accountSelectConfirm').addEventListener('click', () => {
-    const listings = document.getElementsByClassName('accountListing')
-    for(let i=0; i<listings.length; i++){
-        if(listings[i].hasAttribute('selected')){
-            const authAcc = ConfigManager.setSelectedAccount(listings[i].getAttribute('uuid'))
-            ConfigManager.save()
-            updateSelectedAccount(authAcc)
-            toggleOverlay(false)
-            validateSelectedAccount()
-            return
-        }
-    }
-    // None are selected? Not possible right? Meh, handle it.
-    if(listings.length > 0){
-        const authAcc = ConfigManager.setSelectedAccount(listings[0].getAttribute('uuid'))
-        ConfigManager.save()
-        updateSelectedAccount(authAcc)
-        toggleOverlay(false)
-        validateSelectedAccount()
-    }
-})
-
-document.getElementById('accountSelectCancel').addEventListener('click', () => {
-    $('#accountSelectContent').fadeOut(250, () => {
-        $('#overlayContent').fadeIn(250)
-    })
-})
 
 function setServerListingHandlers(){
     const listings = Array.from(document.getElementsByClassName('serverListing'))
@@ -276,7 +185,7 @@ function populateAccountListings(){
     let htmlString = ''
     for(let i=0; i<accounts.length; i++){
         htmlString += `<button class="accountListing" uuid="${accounts[i].uuid}" ${i===0 ? 'selected' : ''}>
-            <img src="https://crafatar.com/renders/head/${accounts[i].uuid}?scale=2&default=MHF_Steve&overlay">
+            <img src="http://cravatar.eu/avatar/${accounts[i].skin}/40.png">
             <div class="accountListingName">${accounts[i].displayName}</div>
         </button>`
     }

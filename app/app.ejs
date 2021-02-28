@@ -1,11 +1,11 @@
 <html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>FoxCraft Launcher</title>
     <script src="./assets/js/scripts/uicore.js"></script>
     <script src="./assets/js/scripts/uibinder.js"></script>
-    <link type="text/css" rel="stylesheet" href="./assets/css/launcher.css">
-    <link type="text/css" rel="stylesheet" href="./assets/css/tailwind.css">
+    <link type="text/css" rel="stylesheet" href="./assets/css/launcher.css" />
+    <link type="text/css" rel="stylesheet" href="./assets/css/tailwind.css" />
 </head>
 <style>
     #main {
@@ -15,60 +15,51 @@
 <body>
 <div id="loadingContainer">
     <div id="loadingContent">
-        <div id="loadSpinnerContainer">
-            <img id="loadSpinnerImage" class="rotating" src="assets/images/foxcraft.png">
-        </div>
+        <div id="loadSpinnerContainer"><img id="loadSpinnerImage" class="rotating" src="assets/images/foxcraft.png" /></div>
     </div>
 </div>
 <div class="bg-gradient-to-r from-yellow-400 to-yellow-600">
     <div id="main">
         <div class="relative bg-white dark:bg-gray-800">
             <div class="flex flex-row flex-wrap">
-                <div class=" h-screen shadow">
-                                        <span class="ml-4">
-                        <%- include('frame') %>
-                        </span>
-                    <div class="flex items-center justify-start mx-6 mt-10 ">
-                        <img class="h-10 rounded-lg" src="assets/images/foxcraft.png"/>
-                    </div>
-                    <nav class="bg-white dark:bg-gray-800 w-20 justify-between flex flex-col">
+                <div class="h-screen shadow dragQueenMdr">
+                    <span class="ml-4"><%- include('frame') %></span>
+                    <div class="flex items-center justify-start mx-6 mt-10"><img class="h-10 rounded-lg" src="assets/images/foxcraft.png" /></div>
+                    <nav class="light:bg-white dark:bg-gray-800 w-20 justify-between flex flex-col">
                         <div class="mt-10 mb-10">
                             <div class="mt-10">
-                                <ul>
+                                <ul class="dragNo">
                                     <li class="my-12 text-center">
                                         <a id="" href="#">
-                            <span class="h-6 w-6 text-gray-500 dark:text-gray-300 mx-auto hover:text-gray-800 dark:hover:text-white transition-colors duration-200">
-
-                                             <svg width="20" height="20" class="m-auto"
-                                                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                                  fill="currentColor">
-                                                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
-                                            </svg>
-                            </span>
+                                                    <span class="h-6 w-6 text-gray-500 dark:text-gray-300 mx-auto hover:text-gray-800 dark:hover:text-white transition-colors duration-200">
+                                                        <svg width="20" height="20" class="m-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path
+                                                                    d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+                                                            />
+                                                        </svg>
+                                                    </span>
                                         </a>
                                     </li>
                                     <li class="my-12 text-center">
                                         <a id="settingsMediaButton" href="#">
-                            <span class="h-6 w-6 text-gray-500 dark:text-gray-300 mx-auto hover:text-gray-800 dark:hover:text-white transition-colors duration-200">
-                                            <svg width="20" height="20" class="m-auto"
-                                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                                 fill="currentColor">
-                                                <path fill-rule="evenodd"
-                                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
-                                                      clip-rule="evenodd"/>
-                                            </svg>
-                            </span>
+                                                    <span class="h-6 w-6 text-gray-500 dark:text-gray-300 mx-auto hover:text-gray-800 dark:hover:text-white transition-colors duration-200">
+                                                        <svg width="20" height="20" class="m-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" />
+                                                        </svg>
+                                                    </span>
                                         </a>
                                     </li>
                                     <li class="my-12 text-center">
                                         <a href="#">
-
-
-                            <span class="h-6 w-6 text-gray-500 dark:text-gray-300 mx-auto hover:text-gray-800 dark:hover:text-white transition-colors duration-200">
-                                            <svg width="20" height="20" class="m-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
-                                            </svg>
-                            </span>
+                                                    <span class="h-6 w-6 text-gray-500 dark:text-gray-300 mx-auto hover:text-gray-800 dark:hover:text-white transition-colors duration-200">
+                                                        <svg width="20" height="20" class="m-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path
+                                                                    fill-rule="evenodd"
+                                                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                                                                    clip-rule="evenodd"
+                                                            />
+                                                        </svg>
+                                                    </span>
                                         </a>
                                     </li>
                                 </ul>
@@ -77,12 +68,11 @@
                         </div>
                     </nav>
                 </div>
-                <%- include('welcome') %>
-                <%- include('login') %>
-                <%- include('settings') %>
-                <%- include('landing') %>
+                <%- include('welcome') %> <%- include('login') %> <%- include('settings') %> <%- include('register') %> <%- include('landing') %>
             </div>
             <%- include('overlay') %>
         </div>
+    </div>
+</div>
 </body>
 </html>

@@ -36,13 +36,16 @@
     "winreg": "^1.2.4"
   },
   "devDependencies": {
+    "autoprefixer": "^10.2.4",
     "cross-env": "^7.0.3",
     "electron": "^11.0.5",
     "electron-builder": "^22.9.1",
-    "eslint": "^7.15.0"
+    "eslint": "^7.15.0",
+    "postcss": "^8.2.6",
+    "tailwindcss": "^2.0.3"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dscalzi/Helios"
+    "url": "git+https://github.com/Asuniia/FoxCraft-Launcher.git"
   }
 }

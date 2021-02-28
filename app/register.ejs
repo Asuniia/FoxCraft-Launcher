@@ -1,0 +1,54 @@
+<div id="registerContainer" style="display: none;"
+     class="container-fluid flex-1 justify-items-stretch justify-center items-center">
+    <div class="text-yellow-500 p-4 text-2xl">
+        <h3 class="font-bold pl-2">Création de votre compte Foxcraft</h3>
+    </div>
+    <div class="container mx-auto ">
+        <div class="relative light:bg-white dark:bg-gray-800 md:w-full p-10">
+            <div>
+                <div id="registerCancelContainer">
+                    <button id="registerCancelButton" class="py-2 px-4 bg-gradient-to-r from-yellow-400 to-yellow-600 focus:ring-yellow-500 focus:ring-offset-yellow-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                        <svg width="20" height="20" class="m-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="shadow-xl rounded-2xl p-4 bg-white dark:bg-gray-800 w-64 m-auto">
+                    <div class="toastWrap"></div>
+                    <div class="w-full text-center">
+                        <div class="flex flex-col items-center justify-between">
+                            <form id="registerForm">
+                                <div class=" relative p-1">
+                                    <span class="loginErrorSpan" id="registerUsernameError">Indiquez un nom d'utilisateur</span>
+                                    <input type="text" id="registerUsername" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent" placeholder="Pseudonyme" maxlength="16"/>
+                                </div>
+                                <div class=" relative p-1">
+                                    <span class="loginErrorSpan" id="registerEmailError">* Syntaxe invalide</span>
+                                    <input type="text" id="registerEmail" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent" placeholder="Adresse e-mail"/>
+                                </div>
+                                <div class=" relative p-1">
+                                    <span class="loginErrorSpan" id="registerPasswordError">* Requis</span>
+                                    <input type="text" id="registerSkin" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent" placeholder="Nom du skin" maxlength="16"/>
+                                    <p class="text-gray-400 text-xs">
+                                        Vous devez donner le nom d'un utilisateur premium que vous pouvez trouver sur NameMC.com
+                                    </p>
+                                </div>
+                                <div class=" relative p-1">
+                                    <span class="loginErrorSpan" id="registerPasswordError">* Requis</span>
+                                    <input type="password" id="registerPassword" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent" placeholder="Mot de passe" minlength="4"/>
+                                </div>
+
+                                <div class="flex items-center justify-between gap-4 w-full mt-8 p-1">
+                                    <button id="registerFormButton" type="button" class="py-2 px-4  bg-gradient-to-r from-yellow-400 to-yellow-600 focus:ring-yellow-500 focus:ring-offset-yellow-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                                        S'inscrire
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="./assets/js/scripts/register.js"></script>
+        </div>
+    </div>
+</div>
