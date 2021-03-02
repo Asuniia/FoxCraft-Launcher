@@ -22,6 +22,7 @@ builder.build({
         productName: 'FoxCraft Launcher',
         artifactName: '${productName}-setup-${version}.${ext}',
         copyright: 'Copyright © 2021 Asuniia',
+
         directories: {
             buildResources: 'build',
             output: 'dist'

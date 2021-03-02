@@ -369,7 +369,7 @@ function populateAuthAccounts() {
         authAccountStr += `<div class="settingsAuthAccount shadow-lg rounded-2xl w-80 p-4 bg-white dark:bg-gray-800" uuid="${acc.uuid}">
 
                                     <div class="flex flex-row justify-center">
-                                       <img class="settingsAuthAccountImage w-36 h-28 rounded-lg" alt="${acc.displayName}" src="http://cravatar.eu/avatar/${acc.skin}/64.png">
+                                       <img class="settingsAuthAccountImage w-36 h-28 rounded-lg" alt="${acc.displayName}" src="https://cravatar.eu/avatar/${acc.skin}/64.png">
                                         <div class="h-28 w-full flex flex-col justify-between">
                                             <div>
                                                 <p class="settingsAuthAccountDetailValue text-gray-800 dark:text-white text-xl font-medium">

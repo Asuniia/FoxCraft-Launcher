@@ -71,19 +71,38 @@ document.getElementById('launch_button').addEventListener('click', function(e){
     }
 })
 
+let authUser1;
+
+document.getElementById('homeMediaButton').onclick = (e) => {
+    if(authUser1) {
+        switchView(getCurrentView(), VIEWS.landing)
+    }
+    //prepareSettings()
+}
+
+
 document.getElementById('settingsMediaButton').onclick = (e) => {
     prepareSettings()
     switchView(getCurrentView(), VIEWS.settings)
 }
 
+document.getElementById('accountMediaButton').onclick = (e) => {
+    if(authUser1) {
+        switchView(getCurrentView(), VIEWS.account)
+    }
+    //prepareSettings()
+}
+
 function updateSelectedAccount(authUser){
     let username = 'mais connectez vous en relancant le launcher.'
+    authUser1 = authUser;
+
     if(authUser != null){
         if(authUser.displayName != null){
             username = authUser.displayName
         }
         if(authUser.uuid != null){
-            document.getElementById('avatarContainer').style.backgroundImage = `url('http://cravatar.eu/avatar/${authUser.skin}/40.png')`
+            document.getElementById('avatarContainer').style.backgroundImage = `url('https://cravatar.eu/avatar/${authUser.skin}/40.png')`
         }
     }
     user_text.innerHTML =  'Bienvenue à vous ' + username + '.'

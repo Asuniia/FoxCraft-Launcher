@@ -106,7 +106,7 @@ document.addEventListener('readystatechange', function () {
         loggerUICore.log('Initialisation d\'UICore.')
 
         if(ConfigManager.getThemeMode() === true) {
-            document.querySelector("html").setAttribute("class","dark");
+            document.querySelector("html").setAttribute("class","dark anim");
         }
 
         Array.from(document.getElementsByClassName('fCb')).map((val) => {

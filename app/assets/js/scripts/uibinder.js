@@ -13,7 +13,8 @@ const VIEWS = {
     login: '#loginContainer',
     settings: '#settingsContainer',
     welcome: '#welcomeContainer',
-    register: '#registerContainer'
+    register: '#registerContainer',
+    account: '#accountContainer'
 }
 
 let currentView

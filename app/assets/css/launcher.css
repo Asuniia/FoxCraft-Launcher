@@ -53,6 +53,18 @@ body , button , span,a{
 .dragNo {
     -webkit-app-region: no-drag;
 }
+
+input[type=range]::-webkit-slider-thumb {
+    pointer-events: all;
+    width: 24px;
+    height: 24px;
+    -webkit-appearance: none;
+
+    /* @apply w-6 h-6 appearance-none pointer-events-auto; */
+}
+
+
+
 /*
  Toast by Asuniia
  */
@@ -76,6 +88,12 @@ body , button , span,a{
     animation: showtoast cubic-bezier(0.23, 1, 0.32, 1) 4s forwards;
     box-sizing: border-box;
 }
+
+.anim {
+    -webkit-animation: anime cubic-bezier(0.23, 1, 0.32, 1) 4s;
+    animation: anime cubic-bezier(0.23, 1, 0.32, 1) 4s;
+}
+
 .toastWrap .toast.success {
     background-color: rgba(152, 255, 28, 0.6);
     box-shadow: 0 5px 20px rgba(152, 255, 28, 0.5);
@@ -91,6 +109,30 @@ body , button , span,a{
     box-shadow: 0 10px 40px rgba(255, 75, 58, 0.8);
     color: #6d0900;
 }
+@keyframes anime {
+    0% {
+        -webkit-transform: translateY(-160px);
+        transform: translateY(-160px);
+        opacity: 0;
+    }
+    20% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    95% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
 
 @keyframes showtoast {
     0% {
@@ -1056,14 +1098,6 @@ input:checked + .toggleSwitchSlider:before {
     background: grey;
     border-radius: 3px;
     position: relative;
-}
-.rangeSliderBar {
-    position: absolute;
-    background: #8be88b;
-    width: 50%;
-    height: 5px;
-    border-radius: 3px 0px 0px 3px;
-    transition: background 0.25s ease;
 }
 .rangeSliderTrack {
     position: absolute;
