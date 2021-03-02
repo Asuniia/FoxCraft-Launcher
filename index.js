@@ -15,8 +15,10 @@ function initAutoUpdater(event, data) {
 
     }
 
-    autoUpdater.autoInstallOnAppQuit = false
-    autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml')
+    if(isDev){
+        autoUpdater.autoInstallOnAppQuit = false
+        autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml')
+    }
 
     if(process.platform === 'darwin'){
         autoUpdater.autoDownload = false
