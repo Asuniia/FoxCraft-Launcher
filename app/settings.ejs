@@ -37,7 +37,7 @@
                         <div id="settingsTabAccount" class="settingsTab">
                             <div class="settingsTabHeader">
                                 <span class="font-bold pl-2 text-yellow-500 text-small">Vos comptes</span>
-                                <span class="light:text-gray-800 dark:text-gray-200">Gérer vos comptes Minecraft depuis ici.</span>
+                                <span class="text-gray-800 dark:text-gray-200">Gérer vos comptes Minecraft depuis ici.</span>
                             </div>
 
                             <div class="flex items-center">
@@ -47,10 +47,11 @@
                         <div id="settingsTabMinecraft" class="settingsTab" style="display: none;">
                             <div class="settingsTabHeader">
                                 <span class="font-bold pl-2 text-yellow-500 text-small">Launcher</span>
-                                <span class="light:text-gray-800 dark:text-gray-200">Régler les paramètre du launcher facilement.</span>
+                                <span class="text-gray-800 dark:text-gray-200">Régler les paramètre du launcher facilement.</span>
                             </div>
 
                             <div>
+                                <span class="text-red-500 dark:text-red-500 text-sm font-bold">Un redémarrage du launcher sera nécessaire.</span>
                                 <div class="mb-3">
                                     <div class="relative inline-block w-10 mr-2 align-middle select-none">
                                         <input type="checkbox" cValue="ThemeMode" name="toggle" id="Blue" class="checked:bg-yellow-500 outline-none focus:outline-none right-4 checked:right-0 duration-200 ease-in absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
@@ -61,7 +62,17 @@
                                     Activer le mode sombre
                                 </span>
                                 </div>
-                                <span class="text-red-500 dark:text-red-500 text-sm font-bold">Un redémarrage du launcher sera nécessaire.</span>
+                                <div class="mb-3">
+                                    <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                                        <input type="checkbox" cValue="Fullscreen" name="toggle" id="Fullscreen" class="checked:bg-yellow-500 outline-none focus:outline-none right-4 checked:right-0 duration-200 ease-in absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                                        <label for="Fullscreen" class="block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer">
+                                        </label>
+                                    </div>
+                                    <span class="text-gray-400 font-medium">
+                                    Activer le mode pleine écran Minecraft
+                                </span>
+                                </div>
+
                             </div>
 
                         </div>
@@ -123,7 +134,7 @@
                         <div id="settingsTabJava" class="settingsTab" style="display: none;">
                             <div class="settingsTabHeader">
                                 <span class="font-bold pl-2 text-yellow-500 text-small">Java & RAM</span>
-                                <span class="light:text-gray-800 dark:text-gray-200">Configurer votre Java et la RAM alloué.</span>
+                                <span class="text-gray-800 dark:text-gray-200">Configurer votre Java et la RAM alloué.</span>
                             </div>
                             <div id="settingsMemoryContainer">
 
@@ -220,7 +231,7 @@
                         <div id="settingsTabAbout" class="settingsTab" style="display: none;">
                             <div class="settingsTabHeader">
                                 <span class="font-bold pl-2 text-yellow-500 text-small">A Propos</span>
-                                <span class="light:text-gray-800 dark:text-gray-200">Découvrez les informations du launcher.</span>
+                                <span class="text-gray-800 dark:text-gray-200">Découvrez les informations du launcher.</span>
                             </div>
 
                             <div class="flex items-center justify-center mx-6 mt-10 ">
@@ -243,7 +254,7 @@
                                     <span id="settingsUpdateVersionText">Version </span>
                                     <span id="settingsUpdateVersionValue">1.0.0</span>
                                 </div>
-                                <span class="light:text-gray-800 dark:text-gray-200">Téléchargez, installez et passez en revue les mises à jour du launcher.</span>
+                                <span class="text-gray-800 dark:text-gray-200">Téléchargez, installez et passez en revue les mises à jour du launcher.</span>
                             </div>
 
                             <span class="text-yellow-500 font-bold" id="settingsUpdateTitle">Vous utilisez la dernière version.</span>

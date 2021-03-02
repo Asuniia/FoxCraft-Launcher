@@ -86,6 +86,7 @@ input[type=range]::-webkit-slider-thumb {
     backdrop-filter: blur(20px);
     -webkit-animation: showtoast cubic-bezier(0.23, 1, 0.32, 1) 4s forwards;
     animation: showtoast cubic-bezier(0.23, 1, 0.32, 1) 4s forwards;
+
     box-sizing: border-box;
 }
 
@@ -1099,6 +1100,17 @@ input:checked + .toggleSwitchSlider:before {
     border-radius: 3px;
     position: relative;
 }
+
+.rangeSliderBar {
+    position: absolute;
+    background: #8be88b;
+    width: 50%;
+    height: 5px;
+    border-radius: 3px 0px 0px 3px;
+    transition: background 0.25s ease;
+}
+
+
 .rangeSliderTrack {
     position: absolute;
     top: -7.5px;

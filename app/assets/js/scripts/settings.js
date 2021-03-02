@@ -122,6 +122,8 @@ function initSettingsValues() {
                         v.value = gFn().join(' ')
                     } else if(cVal === "ThemeMode") {
                         console.log("Je t'ai trouvé !")
+                    } else if(cVal === "Fullscreen") {
+                        console.log("Je t'ai trouvé !")
                     } else {
                         v.value = gFn()
                     }
@@ -170,6 +172,8 @@ function saveSettingsValues() {
                     }
                     sFn(v.checked)
                     if(cVal === 'setThemeMode') {
+                        console.log(cVal)
+                    } else if(cVal === 'setFullscreen') {
                         console.log(cVal)
                     }
                 }
