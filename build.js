@@ -18,8 +18,8 @@ function getCurrentPlatform(){
 builder.build({
     targets: (process.argv[2] != null && Platform[process.argv[2]] != null ? Platform[process.argv[2]] : getCurrentPlatform()).createTarget(),
     config: {
-        appId: 'foxcraft',
-        productName: 'FoxCraft Launcher',
+        appId: 'cerallia',
+        productName: 'Cerallia Launcher',
         artifactName: '${productName}-setup-${version}.${ext}',
         copyright: 'Copyright © 2021 Asuniia',
 
@@ -49,7 +49,7 @@ builder.build({
             target: 'AppImage',
             maintainer: 'Asuniia',
             vendor: 'Asuniia',
-            synopsis: 'FoxCraft Launcher 1.12.2',
+            synopsis: 'Cerallia Launcher',
             description: 'Launcher Minecraft',
             category: 'Game'
         },

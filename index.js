@@ -96,7 +96,7 @@ function createWindow() {
     win = new BrowserWindow({
         width: 990,
         height: 562,
-        icon: getPlatformIcon('foxcraft'),
+        icon: getPlatformIcon('cerallia'),
         frame: false,
         webPreferences: {
             preload: path.join(__dirname, 'app', 'assets', 'js', 'preloader.js'),

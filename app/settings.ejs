@@ -137,15 +137,13 @@
                                 <span class="text-gray-800 dark:text-gray-200">Configurer votre Java et la RAM alloué.</span>
                             </div>
                             <div id="settingsMemoryContainer">
-
-
+                                <div id="settingsMemoryTitle">Mémoire</div>
                                 <div id="settingsMemoryContent">
                                     <div id="settingsMemoryContentLeft">
                                         <div class="settingsMemoryContentItem">
                                             <span class="settingsMemoryHeader">Maximum RAM</span>
                                             <div class="settingsMemoryActionContainer">
-                                                <div id="settingsMaxRAMRange" class="rangeSlider" cValue="MaxRAM"
-                                                     min="3" max="8" value="3" step="0.5">
+                                                <div id="settingsMaxRAMRange" class="rangeSlider" cValue="MaxRAM" min="3" max="8" value="3" step="0.5">
                                                     <div class="rangeSliderBar"></div>
                                                     <div class="rangeSliderTrack"></div>
                                                 </div>
@@ -153,29 +151,26 @@
                                             </div>
                                         </div>
                                         <div class="settingsMemoryContentItem">
-
                                             <span class="settingsMemoryHeader">Minimum RAM</span>
                                             <div class="settingsMemoryActionContainer">
-                                                <div id="settingsMinRAMRange" class="rangeSlider" cValue="MinRAM"
-                                                     min="3" max="8" value="3" step="0.5">
+                                                <div id="settingsMinRAMRange" class="rangeSlider" cValue="MinRAM" min="3" max="8" value="3" step="0.5">
                                                     <div class="rangeSliderBar"></div>
                                                     <div class="rangeSliderTrack"></div>
                                                 </div>
                                                 <span id="settingsMinRAMLabel" class="settingsMemoryLabel">3G</span>
                                             </div>
                                         </div>
+                                        <div id="settingsMemoryDesc"></div>
                                     </div>
                                     <div id="settingsMemoryContentRight">
                                         <div id="settingsMemoryStatus">
                                             <div class="settingsMemoryStatusContainer">
                                                 <span class="settingsMemoryStatusTitle">Total</span>
-                                                <span id="settingsMemoryTotal"
-                                                      class="settingsMemoryStatusValue">16G</span>
+                                                <span id="settingsMemoryTotal" class="settingsMemoryStatusValue">16G</span>
                                             </div>
                                             <div class="settingsMemoryStatusContainer">
                                                 <span class="settingsMemoryStatusTitle">Disponible</span>
-                                                <span id="settingsMemoryAvail"
-                                                      class="settingsMemoryStatusValue">7.3G</span>
+                                                <span id="settingsMemoryAvail" class="settingsMemoryStatusValue">7.3G</span>
                                             </div>
                                         </div>
                                     </div>
@@ -235,10 +230,10 @@
                             </div>
 
                             <div class="flex items-center justify-center mx-6 mt-10 ">
-                                <img id="settingsAboutLogo" class="h-10 rounded-lg" src="./assets/images/foxcraft.png"/>
+                                <img id="settingsAboutLogo" class="h-10 rounded-lg" src="./assets/images/cerallia.png"/>
                                 <span class="text-gray-600 dark:text-gray-300 ml-4 text-2xl font-bold"
                                       id="settingsAboutTitle">
-                    FoxCraft Launcher
+                    Cerallia Launcher
                 </span>
                                 <span class="text-gray-600 dark:text-gray-300 ml-2 font-bold">
                          by Asuniia
@@ -250,9 +245,9 @@
                         <div id="settingsTabUpdate" class="settingsTab" style="display: none;">
                             <div class="settingsTabHeader">
                                 <span class="font-bold pl-2 text-yellow-500 text-small">Mise à jour</span>
-                                <div id="settingsUpdateVersionLine">
-                                    <span id="settingsUpdateVersionText">Version </span>
-                                    <span id="settingsUpdateVersionValue">1.0.0</span>
+                                <div id="settingsUpdateVersionLine" class="font-bold text-gray-800 dark:text-gray-200">
+                                    <span id="settingsUpdateVersionText" class="font-bold text-gray-800 dark:text-gray-200">Version </span>
+                                    <span id="settingsUpdateVersionValue" class="font-bold text-gray-800 dark:text-gray-200">1.0.0</span>
                                 </div>
                                 <span class="text-gray-800 dark:text-gray-200">Téléchargez, installez et passez en revue les mises à jour du launcher.</span>
                             </div>

@@ -351,7 +351,7 @@ exports.pullRemote = function(){
         return exports.pullLocal()
     }
     return new Promise((resolve, reject) => {
-        const distroURL = 'https://foxdata.aktech.fr/FoxCraft.json'
+        const distroURL = 'https://launcher.cerallia.fr/repo/FoxCraft.json'
         const opts = {
             url: distroURL,
             timeout: 2500

@@ -1,7 +1,7 @@
 const request = require('request')
-const logger  = require('./loggerutil')('%c[Mojang]', 'color: #a02d2a; font-weight: bold')
+const logger  = require('./loggerutil')('%c[MineAuthy]', 'color: #a02d2a; font-weight: bold')
 
-const authpath = 'https://foxrepo.aktech.fr'
+const authpath = 'https://authymc.aktech.fr'
 
 exports.authenticate = function(username, password){
     return new Promise((resolve, reject) => {
